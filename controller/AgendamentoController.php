@@ -1,7 +1,7 @@
 <?php
 $upOne = dirname(__DIR__, 1);
-require_once $upOne . '\model\Agendamento.php';
-require_once $upOne . '\model\DAO\AgendamentoDAO.php';
+require_once $upOne . '/model/Agendamento.php';
+require_once $upOne . '/model/DAO/AgendamentoDAO.php';
 
 
 
@@ -39,7 +39,7 @@ class AgendamentoController
         session_start();
         $result = $this->agendamento_dao->listarTudo();
         $_SESSION['agendamentos'] = $result;
-        header("location:view\agendamento\mostrar_tudo.php");
+        header("location:view/agendamento/mostrar_tudo.php");
     }
     public function create()
     {
@@ -60,7 +60,7 @@ class AgendamentoController
 
 
         $this->agendamento_dao->inserir($this->agendamento);
-        header('location:view\home\homepage.php');
+        header('location:view/home/homepage.php');
     }
     public function store() {}
     public function show($id)
@@ -69,7 +69,7 @@ class AgendamentoController
         session_start();
         $result = $this->agendamento_dao->buscar($id);
         $_SESSION['resultado_consulta'] = $result;
-        header('location:view\agendamento\mostrar_registro.php');
+        header('location:view/agendamento/mostrar_registro.php');
     }
 
     public function edit($id)
@@ -78,7 +78,7 @@ class AgendamentoController
         $result = $this->agendamento_dao->buscar($id);
         $_SESSION['resultado_consulta'] = $result;
 
-        header('location:view\agendamento\editar.php');
+        header('location:view/agendamento/editar.php');
     }
     public function update($id)
     {

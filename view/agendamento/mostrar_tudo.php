@@ -2,9 +2,9 @@
 
 
 $upTwo = dirname(__DIR__, 2);
-$caminoIndex = $upTwo . '\index.php';
+$caminoIndex = $upTwo . '/index.php';
 
-require_once $upTwo . '\model\Agendamento.php';
+require_once $upTwo . '/model/Agendamento.php';
 
 
 session_start();
@@ -136,7 +136,7 @@ echo '</pre>';
         </tr>
         <?php
         for ($i = 0; $i < sizeof($resultado); $i++) {
-            $caminhoIndex = $upTwo . '\index.php';
+            $caminhoIndex = $upTwo . '/index.php';
 
             $obj_agendamento = $resultado[$i];
             $id_agendamento = $obj_agendamento->getId();
@@ -147,10 +147,10 @@ echo '</pre>';
             $duracao = $obj_agendamento->getDuracao();
             $status = $obj_agendamento->getStatus();
 
-            $caminhoIndexEditar = "\..\..\index.php" . "?id=$id_agendamento" .
+            $caminhoIndexEditar = "/../../index.php" . "?id=$id_agendamento" .
                 "&classe=Agendamento&metodo=edit";
 
-            $caminhoIndexExcluir = "\..\..\index.php" . "?id=$id_agendamento" .
+            $caminhoIndexExcluir = "/../../index.php" . "?id=$id_agendamento" .
                 "&classe=Agendamento&metodo=delete";
 
             $campo_excluir_editar =

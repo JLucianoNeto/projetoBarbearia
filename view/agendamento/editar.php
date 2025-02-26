@@ -80,7 +80,7 @@
 <body>
 
     <?php
-    require_once ".\..\..\model\Agendamento.php";
+    require_once "./../../model/Agendamento.php";
 
     session_start();
     $resultado = $_SESSION['resultado_consulta'];

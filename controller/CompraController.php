@@ -1,7 +1,7 @@
 <?php
 $upOne = dirname(__DIR__, 1);
-require_once $upOne . '\model\Compra.php';
-require_once $upOne . '\model\DAO\CompraDAO.php';
+require_once $upOne . '/model/Compra.php';
+require_once $upOne . '/model/DAO/CompraDAO.php';
 
 
 class CompraController
@@ -44,7 +44,7 @@ class CompraController
         session_start();
         $result = $this->compra_dao->listar_tudo();
         $_SESSION['compras'] = $result;
-        header("location:view\compra\mostrar_tudo.php");
+        header("location:view/compra/mostrar_tudo.php");
     }
     public function create()
     {
@@ -61,7 +61,7 @@ class CompraController
         $this->compra->setQtd($qtd);
 
         $this->compra_dao->inserir($this->compra);
-        header('location:view\home\homepage.php');
+        header('location:view/home/homepage.php');
     }
     public function store() {}
     public function show($id)
@@ -69,7 +69,7 @@ class CompraController
         session_start();
         $result = $this->compra_dao->buscar($id);
         $_SESSION['resultado_consulta'] = $result;
-        header('location:view\compra\mostrar_registro.php');
+        header('location:view/compra/mostrar_registro.php');
     }
 
     public function edit($id)
@@ -78,7 +78,7 @@ class CompraController
         $result = $this->compra_dao->buscar($id);
         $_SESSION['resultado_consulta'] = $result;
 
-        header('location:view\compra\editar.php');
+        header('location:view/compra/editar.php');
     }
     public function update($id)
     {

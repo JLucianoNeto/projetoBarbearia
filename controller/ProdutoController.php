@@ -2,8 +2,8 @@
 $upOne = dirname(__DIR__, 1);
 
 
-require_once $upOne . '\model\Produto.php';
-require_once $upOne . '\model\DAO\ProdutoDAO.php';
+require_once $upOne . '/model/Produto.php';
+require_once $upOne . '/model/DAO/ProdutoDAO.php';
 
 
 class ProdutoController
@@ -39,7 +39,7 @@ class ProdutoController
         session_start();
         $result = $this->produto_dao->listar_tudo();
         $_SESSION['produtos'] = $result;
-        header("location:view\produto\mostrar_tudo.php");
+        header("location:view/produto/mostrar_tudo.php");
     }
     public function create()
     {
@@ -54,7 +54,7 @@ class ProdutoController
         $this->produto->setCategoria($categoria);
 
         $this->produto_dao->inserir($this->produto);
-        header('location:view\home\homepage.php');
+        header('location:view/home/homepage.php');
     }
     public function store() {}
     public function show($id)
@@ -62,7 +62,7 @@ class ProdutoController
         session_start();
         $result = $this->produto_dao->buscar($id);
         $_SESSION['resultado_consulta'] = $result;
-        header('location:view\produto\mostrar_registro.php');
+        header('location:view/produto/mostrar_registro.php');
     }
 
     public function edit($id)
@@ -71,7 +71,7 @@ class ProdutoController
         $result = $this->produto_dao->buscar($id);
         $_SESSION['resultado_consulta'] = $result;
 
-        header('location:view\produto\editar.php');
+        header('location:view/produto/editar.php');
     }
     public function update($id)
     {
@@ -88,7 +88,7 @@ class ProdutoController
     }
     public function delete($id)
     {
-        
+
         $this->produto->setId($id);
         $this->produto_dao->excluir($this->produto);
 

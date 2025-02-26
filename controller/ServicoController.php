@@ -2,8 +2,8 @@
 
 $upOne = dirname(__DIR__, 1);
 
-require_once $upOne . '\model\Servico.php';
-require_once $upOne . '\model\DAO\ServicoDAO.php';
+require_once $upOne . '/model/Servico.php';
+require_once $upOne . '/model/DAO/ServicoDAO.php';
 
 class ServicoController
 {
@@ -38,7 +38,7 @@ class ServicoController
         session_start();
         $result = $this->servico_dao->listar_tudo();
         $_SESSION['servicos'] = $result;
-        header("location:view\servico\mostrar_tudo.php");
+        header("location:view/servico/mostrar_tudo.php");
     }
     public function create()
     {
@@ -51,7 +51,7 @@ class ServicoController
         $this->servico->setDescricao($descricao);
 
         $this->servico_dao->inserir($this->servico);
-        header('location:view\home\homepage.php');
+        header('location:view/home/homepage.php');
     }
     public function store() {}
     public function show($id)
@@ -59,7 +59,7 @@ class ServicoController
         session_start();
         $result = $this->servico_dao->buscar($id);
         $_SESSION['resultado_consulta'] = $result;
-        header('location:view\servico\mostrar_registro.php');
+        header('location:view/servico/mostrar_registro.php');
     }
 
     public function edit($id)
@@ -68,7 +68,7 @@ class ServicoController
         $result = $this->servico_dao->buscar($id);
         $_SESSION['resultado_consulta'] = $result;
 
-        header('location:view\servico\editar.php');
+        header('location:view/servico/editar.php');
     }
     public function update($id)
     {

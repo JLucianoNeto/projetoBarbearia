@@ -2,8 +2,8 @@
 $upTwo = dirname(__DIR__, 2);
 
 
-require_once $upTwo . '\core\Database.php';
-require_once $upTwo . '\model\Compra.php';
+require_once $upTwo . '/core/Database.php';
+require_once $upTwo . '/model/Compra.php';
 
 class CompraDAO
 {

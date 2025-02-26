@@ -88,7 +88,7 @@
 <body>
 
     <?php
-    require_once ".\..\..\model\Compra.php";
+    require_once "./../../model/Compra.php";
 
     session_start();
     $resultado = $_SESSION['resultado_consulta'];

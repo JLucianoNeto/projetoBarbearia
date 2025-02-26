@@ -1,8 +1,8 @@
 <?php
 $upOne = dirname(__DIR__, 1);
 
-require_once $upOne . '\model\Cliente.php';
-require_once $upOne . '\model\DAO\ClienteDAO.php';
+require_once $upOne . '/model/Cliente.php';
+require_once $upOne . '/model/DAO/ClienteDAO.php';
 
 class ClienteController
 {
@@ -49,7 +49,7 @@ class ClienteController
         session_start();
         $result = $this->cliente_dao->listar_tudo();
         $_SESSION['clientes'] = $result;
-        header("location:view\cliente\mostrar_tudo.php");
+        header("location:view/cliente/mostrar_tudo.php");
     }
     public function create()
     {
@@ -65,9 +65,9 @@ class ClienteController
 
         $this->cliente_dao->inserir($this->cliente);
 
-        header('location:view\home\homepage.php');
+        header('location:view/home/homepage.php');
 
-        //header('location:view\cliente\novo.php');
+        //header('location:view/cliente/novo.php');
     }
     public function store() {}
     public function show($id)
@@ -75,7 +75,7 @@ class ClienteController
         session_start();
         $result = $this->cliente_dao->buscar($id);
         $_SESSION['resultado_consulta'] = $result;
-        header('location:view\cliente\mostrar_registro.php');
+        header('location:view/cliente/mostrar_registro.php');
     }
 
     public function edit($id)
@@ -84,7 +84,7 @@ class ClienteController
         $result = $this->cliente_dao->buscar($id);
         $_SESSION['resultado_consulta'] = $result;
 
-        header('location:view\cliente\editar.php');
+        header('location:view/cliente/editar.php');
     }
     public function update($id)
     {

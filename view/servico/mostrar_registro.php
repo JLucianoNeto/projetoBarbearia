@@ -1,5 +1,5 @@
 <?php
-require_once ".\..\..\model\Servico.php";
+require_once "./../../model/Servico.php";
 
 session_start();
 $resultado = $_SESSION['resultado_consulta'];

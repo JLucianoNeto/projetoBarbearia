@@ -2,9 +2,9 @@
 
 
 $upTwo = dirname(__DIR__, 2);
-$caminoIndex = $upTwo . '\index.php';
+$caminoIndex = $upTwo . '/index.php';
 
-require_once $upTwo . '\model\Servico.php';
+require_once $upTwo . '/model/Servico.php';
 
 
 session_start();
@@ -134,7 +134,7 @@ echo '</pre>';
         </tr>
         <?php
         for ($i = 0; $i < sizeof($resultado); $i++) {
-            $caminhoIndex = $upTwo . '\index.php';
+            $caminhoIndex = $upTwo . '/index.php';
 
             $obj_servico = $resultado[$i];
 
@@ -145,10 +145,10 @@ echo '</pre>';
             $descricao = $obj_servico->getDescricao();
 
 
-            $caminhoIndexEditar = "\..\..\index.php" . "?id=$id_servico" .
+            $caminhoIndexEditar = "/../../index.php" . "?id=$id_servico" .
                 "&classe=Servico&metodo=edit";
 
-            $caminhoIndexExcluir = "\..\..\index.php" . "?id=$id_servico" .
+            $caminhoIndexExcluir = "/../../index.php" . "?id=$id_servico" .
                 "&classe=Servico&metodo=delete";
 
             $campo_excluir_editar =

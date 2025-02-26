@@ -2,9 +2,9 @@
 
 
 $upTwo = dirname(__DIR__, 2);
-$caminoIndex = $upTwo . '\index.php';
+$caminoIndex = $upTwo . '/index.php';
 
-require_once $upTwo . '\model\Produto.php';
+require_once $upTwo . '/model/Produto.php';
 
 
 session_start();
@@ -54,7 +54,8 @@ echo '</pre>';
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
@@ -107,7 +108,8 @@ echo '</pre>';
                 font-size: 14px;
             }
 
-            th, td {
+            th,
+            td {
                 padding: 8px;
             }
 
@@ -133,7 +135,7 @@ echo '</pre>';
         </tr>
         <?php
         for ($i = 0; $i < sizeof($resultado); $i++) {
-            $caminhoIndex = $upTwo . '\index.php';
+            $caminhoIndex = $upTwo . '/index.php';
 
             $obj_produto = $resultado[$i];
 
@@ -145,10 +147,10 @@ echo '</pre>';
             $categoria = $obj_produto->getCategoria();
 
 
-            $caminhoIndexEditar = "\..\..\index.php" . "?id=$id_produto" .
+            $caminhoIndexEditar = "/../../index.php" . "?id=$id_produto" .
                 "&classe=Produto&metodo=edit";
 
-            $caminhoIndexExcluir = "\..\..\index.php" . "?id=$id_produto" .
+            $caminhoIndexExcluir = "/../../index.php" . "?id=$id_produto" .
                 "&classe=Produto&metodo=delete";
 
             $campo_excluir_editar =

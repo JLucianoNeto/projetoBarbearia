@@ -3,8 +3,8 @@
 $upTwo = dirname(__DIR__, 2);
 
 
-require_once $upTwo . '\core\Database.php';
-require_once $upTwo . '\model\Agendamento.php';
+require_once $upTwo . '/core/Database.php';
+require_once $upTwo . '/model/Agendamento.php';
 
 
 

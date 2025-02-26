@@ -2,9 +2,9 @@
 
 
 $upTwo = dirname(__DIR__, 2);
-$caminoIndex = $upTwo . '\index.php';
+$caminoIndex = $upTwo . '/index.php';
 
-require_once $upTwo . '\model\Compra.php';
+require_once $upTwo . '/model/Compra.php';
 
 
 session_start();
@@ -54,7 +54,8 @@ echo '</pre>';
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
@@ -107,7 +108,8 @@ echo '</pre>';
                 font-size: 14px;
             }
 
-            th, td {
+            th,
+            td {
                 padding: 8px;
             }
 
@@ -134,7 +136,7 @@ echo '</pre>';
         </tr>
         <?php
         for ($i = 0; $i < sizeof($resultado); $i++) {
-            $caminhoIndex = $upTwo . '\index.php';
+            $caminhoIndex = $upTwo . '/index.php';
 
             $obj_compra = $resultado[$i];
 
@@ -145,10 +147,10 @@ echo '</pre>';
             $horario = $obj_compra->getHorario();
             $qtd = $obj_compra->getQtd();
 
-            $caminhoIndexEditar = "\..\..\index.php" . "?id=$id_compra" .
+            $caminhoIndexEditar = "/../../index.php" . "?id=$id_compra" .
                 "&classe=Compra&metodo=edit";
 
-            $caminhoIndexExcluir = "\..\..\index.php" . "?id=$id_compra" .
+            $caminhoIndexExcluir = "/../../index.php" . "?id=$id_compra" .
                 "&classe=Compra&metodo=delete";
 
             $campo_excluir_editar =

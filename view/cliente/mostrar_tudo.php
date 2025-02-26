@@ -2,9 +2,9 @@
 
 
 $upTwo = dirname(__DIR__, 2);
-$caminoIndex = $upTwo . '\index.php';
+$caminoIndex = $upTwo . '/index.php';
 
-require_once $upTwo . '\model\Cliente.php';
+require_once $upTwo . '/model/Cliente.php';
 
 
 session_start();
@@ -54,7 +54,8 @@ echo '</pre>';
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
@@ -107,7 +108,8 @@ echo '</pre>';
                 font-size: 14px;
             }
 
-            th, td {
+            th,
+            td {
                 padding: 8px;
             }
 
@@ -135,7 +137,7 @@ echo '</pre>';
         </tr>
         <?php
         for ($i = 0; $i < sizeof($resultado); $i++) {
-            $caminhoIndex = $upTwo . '\index.php';
+            $caminhoIndex = $upTwo . '/index.php';
 
             $obj_agendamento = $resultado[$i];
             $id_cliente = $obj_agendamento->getId();
@@ -148,10 +150,10 @@ echo '</pre>';
             $numero = $obj_agendamento->getNum();
             $bairro = $obj_agendamento->getBairro();
 
-            $caminhoIndexEditar = "\..\..\index.php" . "?id=$id_cliente" .
+            $caminhoIndexEditar = "/../../index.php" . "?id=$id_cliente" .
                 "&classe=Cliente&metodo=edit";
 
-            $caminhoIndexExcluir = "\..\..\index.php" . "?id=$id_cliente" .
+            $caminhoIndexExcluir = "/../../index.php" . "?id=$id_cliente" .
                 "&classe=Cliente&metodo=delete";
 
             $campo_excluir_editar =
